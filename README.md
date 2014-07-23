@@ -1,3 +1,6 @@
 RSS-Aggregator
 ==============
-This file Natasha must edit today. :)
+ver 1.0
+
+Testtest
+
