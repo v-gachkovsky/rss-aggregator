@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - '2.1.2'
+  - '2.1.0'
 # gemfile:
 #   - Gemfile
 script: "bundle exec rspec spec"
