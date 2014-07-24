@@ -1,0 +1,7 @@
+env:
+  global:
+  - secure: Kyp//4YCqH9zOIfwL2DDzQ+2OWwgZEaHHeEDnH3cM0f+WLIeysAP8fngv7L2KJw7acQ3UnuihZgxKVO6nWcrnGBCk57ChYDaK9mDBZYhyqDcmh+jIGFbQsQ7SfUJF1vq/Tp078oH7HNE/K+2/caPgP4vuKqDaZvkE7BR1cDP8tw=
+
+rvm:
+  - 2.1.2
+script: "bundle exec rake test"
