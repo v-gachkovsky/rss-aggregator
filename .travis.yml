@@ -1,13 +1,20 @@
 rvm:
-  - 2.1.2
+- 2.1.2
 env:
   global:
   - DB=postgresql
   - secure: Kyp//4YCqH9zOIfwL2DDzQ+2OWwgZEaHHeEDnH3cM0f+WLIeysAP8fngv7L2KJw7acQ3UnuihZgxKVO6nWcrnGBCk57ChYDaK9mDBZYhyqDcmh+jIGFbQsQ7SfUJF1vq/Tp078oH7HNE/K+2/caPgP4vuKqDaZvkE7BR1cDP8tw=
-
 script:
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake
 before_script:
- - cp config/database.yml.sample config/database.yml
- - psql -c 'create database feedtaker_test' -U postgres
+- cp config/database.yml.sample config/database.yml
+- psql -c 'create database feedtaker_test' -U postgres
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: FWh4kmMBwJ6F5YL5hsie6qVuxBSv2JsDmfx5vgSXVeALVA0pwmbwUeD+UNx7u/+9J7/VlIgzklAb5fplIHiv5gAnCJyUzOmQpIcdFGTRaqgmAY0hk7l6+YYrf0ZXdurzNyc40P/7kiPTtf8Y3ANloQiUQH9GK1N+TX+JGAU6wM0=
+#  app: feedtaker
+#  on:
+#    repo: v-gachkovsky/rss-aggregator
+#    branch: dev
