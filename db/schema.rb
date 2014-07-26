@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726224320) do
+ActiveRecord::Schema.define(version: 20140726234539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feeds", force: true do |t|
+    t.text     "feed"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feeds", ["group_id"], name: "index_feeds_on_group_id", using: :btree
+
+  create_table "groups", force: true do |t|
+    t.string   "group"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
+
+  create_table "tizers", force: true do |t|
+    t.string   "tizer"
+    t.integer  "feed_id"
+    t.boolean  "new_tizer"
+    t.boolean  "read"
+    t.boolean  "notify"
+    t.string   "tags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tizers", ["feed_id"], name: "index_tizers_on_feed_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
