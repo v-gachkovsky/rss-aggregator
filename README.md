@@ -1,5 +1,7 @@
 RSS-Aggregator
 ==============
+feedtaker.herokuapp.com
+
 ver 1.0
 
 Кто я:
