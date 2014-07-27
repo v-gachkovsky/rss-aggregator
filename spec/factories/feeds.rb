@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :feed do
-    feed "MyText"
-    group nil
+    feed { |n| "feedunk_#{n}" }
+    group_id { |n| n }
+    association :group, factory: :group
   end
 end
