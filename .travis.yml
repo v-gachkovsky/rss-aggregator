@@ -10,11 +10,12 @@ script:
 before_script:
 - cp config/database.yml.sample config/database.yml
 - psql -c 'create database feedtaker_test' -U postgres
-#deploy:
-#  provider: heroku
-#  api_key:
-#    secure: FWh4kmMBwJ6F5YL5hsie6qVuxBSv2JsDmfx5vgSXVeALVA0pwmbwUeD+UNx7u/+9J7/VlIgzklAb5fplIHiv5gAnCJyUzOmQpIcdFGTRaqgmAY0hk7l6+YYrf0ZXdurzNyc40P/7kiPTtf8Y3ANloQiUQH9GK1N+TX+JGAU6wM0=
-#  app: feedtaker
-#  on:
-#    repo: v-gachkovsky/rss-aggregator
-#    branch: dev
+- rake db:seed
+deploy:
+  provider: heroku
+  api_key:
+    secure: FWh4kmMBwJ6F5YL5hsie6qVuxBSv2JsDmfx5vgSXVeALVA0pwmbwUeD+UNx7u/+9J7/VlIgzklAb5fplIHiv5gAnCJyUzOmQpIcdFGTRaqgmAY0hk7l6+YYrf0ZXdurzNyc40P/7kiPTtf8Y3ANloQiUQH9GK1N+TX+JGAU6wM0=
+  app: feedtaker
+  on:
+    repo: v-gachkovsky/rss-aggregator
+    branch: dev
