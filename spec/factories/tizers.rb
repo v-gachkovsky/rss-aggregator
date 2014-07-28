@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :tizer do
-    tizer { |n| "tizer_#{n}" }
+    name { |n| "tizer_#{n}" }
     feed_id { |n| n }
     new_tizer 1 
     read false 

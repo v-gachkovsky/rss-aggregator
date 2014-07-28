@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :feed do
-    feed { |n| "feedunk_#{n}" }
+    url { |n| "url_#{n}.com" }
+    name { |n| "name_#{n}" }
     group_id { |n| n }
     association :group, factory: :group
   end
