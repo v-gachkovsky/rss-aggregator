@@ -1,17 +1,17 @@
 local: &local
   adapter: postgresql
-  username: enter_your_db_user
-  password: enter_your_db_pswd
+  username: postgres
+  password:
   host: localhost
 
 development:
   <<: *local
-  database: rss-aggr_dev
+  database: feedtaker_dev
 
 test:
   <<: *local
-  database: rss-aggr_test
+  database: feedtaker_test
 
 production:
   <<: *local
-  database: rss-aggr_production
+  database: feedtaker_production
