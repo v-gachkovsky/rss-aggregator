@@ -11,22 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726234539) do
+ActiveRecord::Schema.define(version: 20140728112313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "feeds", force: true do |t|
-    t.text     "feed"
+    t.string   "url",        limit: 200
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "feeds", ["group_id"], name: "index_feeds_on_group_id", using: :btree
 
   create_table "groups", force: true do |t|
-    t.string   "group"
+    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140726234539) do
   add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
 
   create_table "tizers", force: true do |t|
-    t.string   "tizer"
+    t.string   "name"
     t.integer  "feed_id"
     t.boolean  "new_tizer"
     t.boolean  "read"
