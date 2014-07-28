@@ -6,7 +6,7 @@ RSpec.describe Group, :type => :model do
     expect(FactoryGirl.build(:group)).to be_valid
   end
 
-  it { is_expected belong_to(:user) }
+  it { is_expected.to belong_to(:user) }
 
   it { is_expected.to have_many(:feeds) }
 end

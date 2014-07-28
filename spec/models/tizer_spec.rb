@@ -6,5 +6,5 @@ RSpec.describe Tizer, :type => :model do
     expect(FactoryGirl.build(:tizer)).to be_valid
   end
 
-  it { is_expected belong_to(:feed) }
+  it { is_expected.to belong_to(:feed) }
 end
