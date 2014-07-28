@@ -5,6 +5,6 @@ FactoryGirl.define do
     group "Grouptest"
     #group { |n| (n % 2) == 0 ? "Group1" : "Group2" }
     user_id { |n| n }
-    association :user, factory: :user
+    association :user #, factory: :user
   end
 end
