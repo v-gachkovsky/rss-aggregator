@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :group do
-    group "Grouptest"
+    name "Grouptest"
     user_id { |n| n }
     association :user 
   end
