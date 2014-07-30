@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+$margin_size: 70px;
+$size_of_input_fields: 20em;
+body {
+  margin-right: $margin_size;
+  margin-left:  $margin_size;
+}
+
+.form-inputs {
+  input {
+    width: $size_of_input_fields;
+  }
+}
+
