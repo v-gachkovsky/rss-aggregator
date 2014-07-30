@@ -10,7 +10,7 @@ gem 'simple_form'
 
 gem 'enumerize'
 
-gem 'simple_form'
+gem 'slim-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
