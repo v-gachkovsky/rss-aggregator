@@ -9,20 +9,89 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *= require_tree .
- *= require_self
  */
-$margin_size: 70px;
-$size_of_input_fields: 20em;
+
+
 body {
-  margin-right: $margin_size;
-  margin-left:  $margin_size;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    font: 20px Georgia, "Times New Roman", Times, serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+    border:3px solid #E4E4E4;
+}
+h2 {
+    font-size: 25px;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom:1px solid #E4E4E4;
+    margin: -10px -15px 30px -10px;;
+    color: #888;
 }
 
-.form-inputs {
-  input {
-    width: $size_of_input_fields;
-  }
+
+title {
+    display: block;
+    margin: 0px;
+}
+label {
+    display: block;
+    float: left;
+    width: 20%;
+    text-align: left;
+    padding-right: 30px;
+    margin-top: 5px;
+    color: #888;
+    padding: 3px 3px 8px 8px;
+    display: block;
+     
+
+}
+
+input {
+    
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 10px 8px;
+    width: 70%;
+    font-size: 16px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+textarea {
+    padding: 5px 3px 30px 5px;
+}
+
+.button {
+    display: block;
+    background: #E27575;
+    border: none;
+    padding: 0px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+    font-size: 18px;
+    horizontal-align: left;
+    width: 120px;
+    height: 60px;
+    text-align: left;
+    margin: 20px 25px 15px 25px;
+
+}
+.button:hover {
+    background: #CF7A7A
 }
 
