@@ -27,10 +27,9 @@ html
     				span.icon-bar
     				span.icon-bar
     				span.icon-bar
-    			a.navbar-brand href="index.html"
-    				| FeedTaker
+    			= link_to "FeedTaker", root_path, class: "navbar-brand"
     		= render partial: 'layouts/profile'
-    		= render partial: 'layouts/sidebar'
+    		= yield :group_sidebar
     	#page-wrapper
             .container-fluid
                 .row
