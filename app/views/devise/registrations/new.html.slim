@@ -15,5 +15,5 @@
       .form-group
         = f.label :password_confirmation
         = f.password_field :password_confirmation, class: "form-control"
-      = f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary"
-= render "devise/shared/links"
+      = render "devise/shared/links"
+      = f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-success"

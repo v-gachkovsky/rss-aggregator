@@ -8,5 +8,5 @@
       .form-group
         = f.label :email
         = f.email_field :email, class: "form-control"
+      = render "devise/shared/links"
       = f.submit t('.resend_unlock_instructions', :default => "Resend unlock instructions"), class: "btn btn-primary"
-= render "devise/shared/links"

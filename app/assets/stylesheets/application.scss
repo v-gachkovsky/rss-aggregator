@@ -15,7 +15,24 @@
 @import "bootstrap";
 @import 'devise_bootstrap_views';
 
-/*
-input[type=email] { width: 15em; }
-input[type=password] { width: 15em; }
-*/
+body {
+  margin: 0 auto;
+}
+
+.panel.panel-default {
+  width: 500px;
+}
+
+.panel-body {
+  font-size: 0.5em;
+}
+
+input[type=submit] {
+  margin: 20px;
+}
+
+.login_reg_links {
+  //position: absolute;
+  float:right;
+  margin: 20px 10px;
+}
