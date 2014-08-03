@@ -23,7 +23,6 @@ body {
 
 #page-wrapper {
     position: absolute;
-    width: 100%;
     padding: 0;
     background-color: #fff;
 }
@@ -40,6 +39,7 @@ body {
 
     #page-wrapper {
         padding: 10px;
+        width: 100%;
         min-height: 100%;
     }
 }
