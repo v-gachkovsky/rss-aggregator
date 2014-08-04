@@ -12,5 +12,5 @@
       .form-group
         = f.label :password_confirmation, t('.confirm_new_password', :default => 'Confirm new password')
         = f.password_field :password_confirmation, class: "form-control"
+      = render "devise/shared/links"
       = f.submit t('.change_my_password', :default => 'Change my password'), class: "btn btn-primary"
-= render "devise/shared/links"

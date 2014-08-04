@@ -8,6 +8,6 @@
       .form-group
         = f.label :email
         = f.email_field :email, class: "form-control"
+      = render "devise/shared/links"
+      | o
       = f.submit t('.resend_confirmation_instructions', :default => 'Resend confirmation instructions'), class: "btn btn-primary"
-= render "devise/shared/links"
-| o 
