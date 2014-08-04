@@ -1,6 +1,6 @@
 RSS-Aggregator
 ==============
-http://feedtaker.herokuapp.com
+heroku: http://feedtaker.herokuapp.com
 
 ver 1.0
 
