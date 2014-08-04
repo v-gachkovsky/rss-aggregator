@@ -29,7 +29,11 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (2.2.0.20140727)
+      execjs
     bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     cancancan (1.9.1)
     coderay (1.1.0)
@@ -49,6 +53,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.3)
     diff-lcs (1.2.5)
     enumerize (0.8.0)
       activesupport (>= 3.2)
@@ -187,10 +192,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
+  bootstrap-sass
   cancancan (~> 1.7)
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise
+  devise-bootstrap-views
   enumerize
   factory_girl_rails
   faker (~> 1.2.0)
