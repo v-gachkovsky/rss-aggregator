@@ -1,13 +1,11 @@
 - content_for :group_sidebar do
-	.collapse.navbar-collapse.navbar-ex1-collapse
-		ul.nav.navbar-nav.side-nav
-			- @groups.each do |g|
-				li
-				  a data-target="##{g.id}" data-toggle="collapse" href="javascript:;" 
-				    i.fa.fa-fw.fa-arrows-v
-				    = g.name
-				    i.fa.fa-fw.fa-caret-down
-				  ul.collapse id="#{g.id}"
-				  	- g.feeds.each do |f|
-					    li
-					      a href="#"  = f.name
+	- @groups.each do |g|
+		li
+		  a data-target="##{g.id}" data-toggle="collapse" href="javascript:;" 
+		    i.fa.fa-fw.fa-arrows-v
+		    = g.name
+		    i.fa.fa-fw.fa-caret-down
+		  ul.collapse id="#{g.id}"
+		  	- g.feeds.each do |f|
+			    li
+			      a href="#"  = f.name
