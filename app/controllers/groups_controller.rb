@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.includes(:feeds)
+    @groups = current_user.groups.includes(:feeds)
   end
 
   def new
