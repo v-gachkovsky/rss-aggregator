@@ -12,12 +12,8 @@
 						| Profile
 				li
 					= link_to groups_path do
-						i.fa.fa-fw.fa-envelope
+						i.fa.fa-fw.fa-th-large
 						| Groups
-				/li
-					a href="#"
-						i.fa.fa-fw.fa-gear
-						| Settings
 				li.divider
 				li
 					= link_to destroy_user_session_path, method: :delete do
@@ -26,5 +22,5 @@
 - else
     .login_reg_links
 		  = link_to "Войти", new_user_session_path
-		  |  или 
+		  |  или
 		  = link_to "Зарегистрироваться", new_user_registration_path

@@ -2,7 +2,7 @@
 	ul.nav.nav-tabs
 		- @groups.each do |g|
 				li.dropdown
-					a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#" 
+					a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#"
 						= g.name
 						b.caret
 					ul.dropdown-menu aria-labelledby="myTabDrop#{g.id}" role="menu"
@@ -15,4 +15,3 @@
 			- g2.feeds.each do |f2|
 				.tab-pane id="#{f2.id}"
 					= f2.name
-					
