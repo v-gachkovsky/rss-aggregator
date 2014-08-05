@@ -12,17 +12,19 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
 	body
-		#wrapper2
+		#wrapper
 			nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
 				.navbar-header
 					= link_to "FeedTaker", root_path, class: "navbar-brand"
 				ul.nav.navbar-right.top-nav
 					= render partial: 'layouts/profile'
+				= render partial: 'layouts/sidebar'
 			#page-wrapper
 				.container-fluid
-					.row-center
-						.col-md-6.col-md-offset-3
-							= yield :slider
+					.row
+						.col-lg-12
+							h1.page-header
+								| Header
 					.row
 						.col-lg-12
 							= yield
