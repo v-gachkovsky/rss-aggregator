@@ -1,10 +1,12 @@
 class GroupsController < ApplicationController
 
   before_action :find_group, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+ # before_action :authenticate_user!
 
   def index
-    @groups = current_user.groups.includes(:feeds)
+    #@groups = current_user.groups.includes(:feeds)
+    @groups = Group.all
+   
   end
 
   def new
@@ -12,8 +14,9 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.groups.new(params.require(:group).permit(:name))
-    if group.save
+    #@group = current_user.groups.new(params.require(:group).permit(:name))
+    @group = Group.new
+    if @group.save
       redirect_to groups_path
     else
       render :new
@@ -21,6 +24,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
@@ -33,13 +37,13 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    redirect_to projects_path
+    redirect_to groups_path
   end
 
   private
 
   def find_group
-  	@group = Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
 
 end

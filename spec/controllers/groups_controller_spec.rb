@@ -15,7 +15,7 @@ describe GroupsController do
 
   context "when user logged in" do
     let(:user) { FactoryGirl.create(:user) }
-    subject { FactoryGirl.create(:group, owner: user) }
+    subject { FactoryGirl.create(:group, id: user) }
 
     before do
       sign_in user
@@ -26,6 +26,7 @@ describe GroupsController do
     it "render :index view" do
       get :index
       expect(response).to render_template :index
+      
     end
   end
 
@@ -80,7 +81,7 @@ describe GroupsController do
 
 
   describe 'DELETE #destroy' do
-    before(:each) { @group = FactoryGirl.create :group, owner: user }
+    before(:each) { @group = FactoryGirl.create :group }
     
     it "deletes the group" do
       expect {
