@@ -1,11 +1,18 @@
-- content_for :group_sidebar do
-	- @groups.each do |g|
-		li
-		  a data-target="##{g.id}" data-toggle="collapse" href="javascript:;" 
-		    i.fa.fa-fw.fa-arrows-v
-		    = g.name
-		    i.fa.fa-fw.fa-caret-down
-		  ul.collapse id="#{g.id}"
-		  	- g.feeds.each do |f|
-			    li
-			      a href="#"  = f.name
+- content_for :groups_nav do
+	ul.nav.nav-tabs
+		- @groups.each do |g|
+				li.dropdown
+					a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#" 
+						= g.name
+						b.caret
+					ul.dropdown-menu aria-labelledby="myTabDrop#{g.id}" role="menu"
+						- g.feeds.each do |f|
+							li
+								a data-toggle="tab" href="##{f.id}" tabindex="-1"
+									= f.name
+	.tab-content
+		- @groups.each do |g2|
+			- g2.feeds.each do |f2|
+				.tab-pane id="#{f2.id}"
+					= f2.name
+					
