@@ -7,7 +7,7 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px auto;
+    margin-top: 100px;
     background-color: #222;
 }
 
@@ -18,11 +18,15 @@ body {
 }
 
 #wrapper {
-    padding: 0;
+    padding-left: 0;
+}
+
+#side-wrapper {
+    padding-right: 225px;
 }
 
 #page-wrapper {
-    position: absolute;
+    width: 100%;
     padding: 0;
     background-color: #fff;
 }
@@ -33,12 +37,13 @@ body {
 }
 
 @media(min-width:768px) {
-   
 
+    #wrapper {
+        padding-left: 225px;
+    }
+    
     #page-wrapper {
         padding: 10px;
-        width: 100%;
-        
     }
 }
 

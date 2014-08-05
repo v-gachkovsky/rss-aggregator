@@ -12,12 +12,13 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
 	body
-		#wrapper2
+		#wrapper
 			nav.navbar.navbar-inverse.navbar-fixed-top role="navigation"
 				.navbar-header
 					= link_to "FeedTaker", root_path, class: "navbar-brand"
 				ul.nav.navbar-right.top-nav
 					= render partial: 'layouts/profile'
+				= render partial: 'layouts/sidebar'
 			#page-wrapper
 				.container-fluid
 					.row

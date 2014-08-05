@@ -20,8 +20,10 @@ gem 'rails', '4.1.4'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
-
+#bootstrap
 gem 'bootstrap-sass'
+#Fonts
+gem "font-awesome-rails"
 
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
