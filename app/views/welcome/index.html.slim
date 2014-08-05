@@ -1,8 +1,18 @@
-h2 Welcome to out RSS-Aggregator!
-- if user_signed_in?
-	h1 Здравствуйте, #{current_user.email}
-	= link_to "Выйти", destroy_user_session_path, method: :delete
-- else
-	= link_to "Войти", new_user_session_path
-	|  или 
-	= link_to "Зарегистрироваться", new_user_registration_path
+- content_for :slider do
+	#carousel-example-generic.carousel.slide data-ride="carousel" 
+		ol.carousel-indicators
+			li.active data-slide-to="0" data-target="#carousel-example-generic" 
+			li data-slide-to="1" data-target="#carousel-example-generic" 
+		.carousel-inner
+			.item.active
+				img alt="Надпись" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" 
+					.carousel-caption
+			.item
+				img alt="Надпись" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNDQ0O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+U2Vjb25kIHNsaWRlPC90ZXh0Pjwvc3ZnPg==" 
+					.carousel-caption
+		a.left.carousel-control data-slide="prev" href="#carousel-example-generic" 
+		    span.glyphicon.glyphicon-chevron-left
+		a.right.carousel-control data-slide="next" href="#carousel-example-generic" 
+		    span.glyphicon.glyphicon-chevron-right
+|	Welcome to our RSS-Aggregator!
+
