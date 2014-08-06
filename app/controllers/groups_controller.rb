@@ -5,7 +5,6 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.includes(:feeds)
-    #@groups = Group.all
   end
 
   def new
@@ -13,8 +12,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    # @group = current_user.groups.new(params.require(:group).permit(:name))
-    # @group = Group.new
     @group = Group.new(group_params)
     if @group.save
       redirect_to groups_path
