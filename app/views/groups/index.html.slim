@@ -3,11 +3,9 @@
     - @groups.each do |g|
         li.dropdown
           .hover
-            button.btn.btn-default.btn-xs type="button" data-toggle="modal" data-target="#editGroup"
+            = link_to group_path(g), data: {toggle: 'modal', target: '#editGroup'}
               span.glyphicon.glyphicon-pencil
-            button.btn.btn-default.btn-xs type="button" data-toggle="modal" data-target="#addFeedToGroup"
-              span.glyphicon.glyphicon-plus
-            button.btn.btn-default.btn-xs type="button" data-toggle="modal" data-target="#deleteGroup"
+            = link_to group_path(g), method: :delete, data: {confirm: 'sure?'}, class: "btn.btn-default.btn-xs", type: "button"
               span.glyphicon.glyphicon-remove
           a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#"
             span.label.label-info
@@ -26,6 +24,7 @@
       - g2.feeds.each do |f2|
         .tab-pane id="#{f2.id}"
           = f2.name
+- @groups.each do |g3|
   .modal.fade id="editGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
     .modal-dialog
       .modal-content
@@ -33,6 +32,7 @@
           h4.modal-title id="myModalLabel"
             | Edit group
         .modal-body
+          = render partial: "edit", object: g3
         .modal-footer
           button.btn.btn-default type="button" data-dismiss="modal"
             | Close
@@ -43,17 +43,6 @@
         .modal-header
           h4.modal-title id="myModalLabel2"
             | Add feed into group
-        .modal-body
-        .modal-footer
-          button.btn.btn-default type="button" data-dismiss="modal"
-            | Close
-
-  .modal.fade id="deleteGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-    .modal-dialog
-      .modal-content
-        .modal-header
-          h4.modal-title id="myModalLabel"
-            | Delete group
         .modal-body
         .modal-footer
           button.btn.btn-default type="button" data-dismiss="modal"
