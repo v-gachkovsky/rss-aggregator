@@ -9,12 +9,12 @@
 							span.glyphicon.glyphicon-plus
 						button.btn.btn-default.btn-xs type="button" data-toggle="modal" data-target="#deleteGroup"
 							span.glyphicon.glyphicon-remove
-					a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#" 
+					a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#"
 						span.label.label-info
 							= g.feeds.count
 						| &nbsp
 						= g.name
-						
+
 					ul.dropdown-menu aria-labelledby="myTabDrop#{g.id}" role="menu"
 						- g.feeds.each do |f|
 							li
@@ -31,31 +31,31 @@
 			.modal-content
 				.modal-header
 					h4.modal-title id="myModalLabel"
-						| Редактировать группу
+						| Edit group
 				.modal-body
 				.modal-footer
 					button.btn.btn-default type="button" data-dismiss="modal"
-						| Закрыть
+						| Close
 
 	.modal.fade id="addFeedToGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true"
 		.modal-dialog
 			.modal-content
 				.modal-header
 					h4.modal-title id="myModalLabel2"
-						| Добавить фид в группу
+						| Add feed into group
 				.modal-body
 				.modal-footer
 					button.btn.btn-default type="button" data-dismiss="modal"
-						| Закрыть
+						| Close
 
 	.modal.fade id="deleteGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
 		.modal-dialog
 			.modal-content
 				.modal-header
 					h4.modal-title id="myModalLabel"
-						| Удалить группу
+						| Delete group
 				.modal-body
 				.modal-footer
 					button.btn.btn-default type="button" data-dismiss="modal"
-						| Закрыть
-					
+						| Close
+
