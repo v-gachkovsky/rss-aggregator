@@ -9,4 +9,6 @@ RSpec.describe Feed, :type => :model do
   it { is_expected.to belong_to(:group) }
 
   it { is_expected.to have_many(:tizers) }
+
+  it { is_expected.to ensure_length_of(:name).is_at_least(2).is_at_most(50) }
 end
