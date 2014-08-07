@@ -1,8 +1,10 @@
 class FeedsController < ApplicationController
+  
   before_action :authenticate_user!
   before_action :find_feed, only: [:edit, :update, :destroy]
 
   def index
+    @feeds = Feed.all
   end
 
   def edit
