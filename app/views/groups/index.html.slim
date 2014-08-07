@@ -1,0 +1,37 @@
+- content_for :groups_nav do
+  .col-sm-3.pull-left
+    ul.list-group
+      li.list-group-item data-target="#demo" data-toggle="collapse" 
+        | Добавить группу
+        span.show-menu2
+          span.glyphicon.glyphicon-arrow-down
+      #demo.collapse
+        = render partial: "new", locals: {group: @group}
+      - @groups.each do |g|
+        li.list-group-item
+          = g.name
+          span.show-menu
+            span.glyphicon.glyphicon-chevron-right
+          ul.list-group-submenu
+            li.list-group-submenu-item.danger data-toggle="tooltip" data-placement="top" title="Delete"
+              = link_to group_path(g), method: :delete, data: {confirm: 'Delete this group?'}
+                span.glyphicon.glyphicon-remove
+            li.list-group-submenu-item.success data-toggle="tooltip" data-placement="top" title="Edit"
+              = link_to group_path(g), data: {toggle: 'modal', target: '#editGroup'}
+                span.glyphicon.glyphicon-wrench
+        .modal.fade id="editGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+          .modal-dialog
+            .modal-content
+              .modal-header
+                h4.modal-title id="myModalLabel"
+                  | Edit group
+              .modal-body
+                = render partial: "edit", object: g
+              .modal-footer
+                button.btn.btn-default type="button" data-dismiss="modal"
+                  | Close
+  .col-sm-9
+    button.pull-right.btn.btn-default data-toggle="tooltip" data-placement="top" title="Add Feed"
+      span.glyphicon.glyphicon-plus
+
+
