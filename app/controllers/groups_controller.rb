@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups.includes(:feeds)
+    @group = Group.new
   end
 
   def new

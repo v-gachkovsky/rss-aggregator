@@ -1,49 +1,37 @@
 - content_for :groups_nav do
-  ul.nav.nav-tabs
-    - @groups.each do |g|
-        li.dropdown
-          .hover
-            = link_to group_path(g), data: {toggle: 'modal', target: '#editGroup'}
-              span.glyphicon.glyphicon-pencil
-            = link_to group_path(g), method: :delete, data: {confirm: 'sure?'}, class: "btn.btn-default.btn-xs", type: "button"
-              span.glyphicon.glyphicon-remove
-          a.dropdown-toggle id="myTabDrop#{g.id}" data-toggle="dropdown" href="#"
-            span.label.label-info
-              = g.feeds.count
-            | &nbsp
-            = g.name
+  .col-sm-3.pull-left
+    ul.list-group
+      li.list-group-item data-target="#demo" data-toggle="collapse" 
+        | Добавить группу
+        span.show-menu2
+          span.glyphicon.glyphicon-arrow-down
+      #demo.collapse
+        = render partial: "new", locals: {group: @group}
+      - @groups.each do |g|
+        li.list-group-item
+          = g.name
+          span.show-menu
+            span.glyphicon.glyphicon-chevron-right
+          ul.list-group-submenu
+            li.list-group-submenu-item.danger data-toggle="tooltip" data-placement="top" title="Delete"
+              = link_to group_path(g), method: :delete, data: {confirm: 'Delete this group?'}
+                span.glyphicon.glyphicon-remove
+            li.list-group-submenu-item.success data-toggle="tooltip" data-placement="top" title="Edit"
+              = link_to group_path(g), data: {toggle: 'modal', target: '#editGroup'}
+                span.glyphicon.glyphicon-wrench
+        .modal.fade id="editGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+          .modal-dialog
+            .modal-content
+              .modal-header
+                h4.modal-title id="myModalLabel"
+                  | Edit group
+              .modal-body
+                = render partial: "edit", object: g
+              .modal-footer
+                button.btn.btn-default type="button" data-dismiss="modal"
+                  | Close
+  .col-sm-9
+    button.pull-right.btn.btn-default data-toggle="tooltip" data-placement="top" title="Add Feed"
+      span.glyphicon.glyphicon-plus
 
-          ul.dropdown-menu aria-labelledby="myTabDrop#{g.id}" role="menu"
-            - g.feeds.each do |f|
-              li
-                a data-toggle="tab" href="##{f.id}" tabindex="-1"
-                  span.glyphicon.glyphicon-remove.pull-right
-                  = f.name
-  .tab-content
-    - @groups.each do |g2|
-      - g2.feeds.each do |f2|
-        .tab-pane id="#{f2.id}"
-          = f2.name
-- @groups.each do |g3|
-  .modal.fade id="editGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-    .modal-dialog
-      .modal-content
-        .modal-header
-          h4.modal-title id="myModalLabel"
-            | Edit group
-        .modal-body
-          = render partial: "edit", object: g3
-        .modal-footer
-          button.btn.btn-default type="button" data-dismiss="modal"
-            | Close
 
-  .modal.fade id="addFeedToGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true"
-    .modal-dialog
-      .modal-content
-        .modal-header
-          h4.modal-title id="myModalLabel2"
-            | Add feed into group
-        .modal-body
-        .modal-footer
-          button.btn.btn-default type="button" data-dismiss="modal"
-            | Close
