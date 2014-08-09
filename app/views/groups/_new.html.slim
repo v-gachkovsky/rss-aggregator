@@ -1,3 +1,16 @@
-= simple_form_for group do |f|
-  = f.input :name
-  = f.submit
+= simple_nested_form_for group do |f|
+    .in_nav
+      .form-group  
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+        = f.fields_for :feeds do |feed_form|
+            .feeds_in_nested
+              .form-group
+                = feed_form.input :name, class: "form-control"
+              .form-group
+                = feed_form.input :url, class: "form-control"
+              .form-group
+                = feed_form.link_to_remove "Remove this feed"
+          
+        = f.link_to_add "Add a feed", :feeds
+        = f.submit t('.sign_in', :default => "Create Group"), class: "btn btn-large btn-success"

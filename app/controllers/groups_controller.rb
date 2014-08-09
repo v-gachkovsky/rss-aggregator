@@ -44,7 +44,11 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, feeds_attributes: feed_params)
+  end
+
+  def feed_params
+    [:id, :name, :url, :_destroy]
   end
 
 end

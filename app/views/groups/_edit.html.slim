@@ -1,3 +1,6 @@
 = simple_form_for(edit) do |f|
-  = f.input :name
-  = f.submit
+    .form-group
+      .in_nav
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+        = f.submit t('.sign_in', :default => "Edit Group"), class: "btn btn-large btn-success"

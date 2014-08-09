@@ -11,14 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_nested_form
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 $(document).on("page:load", $('.dropdown-toggle').dropdown());
-          $(function () {
+  $(function () {
     $('.list-group-item > .show-menu').on('click', function(event) {
         event.preventDefault();
         $(this).closest('li').toggleClass('open');
     });
-});
+ });
