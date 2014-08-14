@@ -26,3 +26,5 @@ capybara-*.html
 *.swo
 .idea
 .DS_Store
+
+.env

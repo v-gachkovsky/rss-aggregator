@@ -64,6 +64,7 @@ group :development, :test do
   gem 'pry-remote', '~> 0.1.8'
   gem 'factory_girl_rails'
   gem 'faker', '~> 1.2.0'
+  gem 'foreman'
 end
 
 group :test do

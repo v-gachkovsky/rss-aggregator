@@ -27,16 +27,18 @@ class ProfilesController < Devise::RegistrationsController
     params[:user][:password_confirmation].present?
   end
 
- def sign_up_params
-   params.require(:user).permit(:email, :password, :password_confirmation)
- end
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 
- def account_update_params
-   params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
- end
+  def account_update_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+  end
 
- def after_update_path_for(resource)
-   edit_user_registration_path
- end
+  def after_update_path_for(resource)
+    edit_user_registration_path
+  end
+
+  
 
 end
